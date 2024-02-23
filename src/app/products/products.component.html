@@ -1,0 +1,24 @@
+<!--
+<div class="container-fluid mt-5">
+    <div *ngFor="let val of products; index as i">
+        <img class="mb-4" src="./assets/{{val.img}}">
+        <h4>{{val.name}}</h4>
+        <p class="fs-5">{{val.price}}€</p>
+        <a routerLink="/details/{{i}}" class="btn btn-warning">Details</a>
+        <hr>
+    </div>
+</div>
+-->
+<div class="container mt-5"></div>
+<div *ngFor="let product of products; index as i">
+  <div class="card" style="width: 18rem;">
+    <img src="{{product.img}}" class="card-img-top" alt="product-img">
+    <div class="card-body">
+      <h5 class="card-title">{{product.name}}</h5>
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      <a href="#" class="btn btn-primary">Go somewhere</a>
+      <button *ngIf="product.availability" (click)="addToCart(product)">Add to cart</button>
+    </div>
+  </div>
+
+</div>

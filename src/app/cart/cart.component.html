@@ -1,0 +1,7 @@
+<div *ngFor="let val of cart">
+    <img src="./assets/{{val.img}}" alt="product" width="150px">
+    <p>{{val.name}}</p>
+    <p>{{val.price}}</p>
+</div>
+<p>{{cartSummary()}}</p>
+<p>{{cartSummaryPlusTen()}}</p>
