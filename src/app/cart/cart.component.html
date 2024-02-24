@@ -1,7 +1,42 @@
+<!--<div class="cart-container">
+  <div class="cart">
+  <h5>Cart Items</h5>
 <div *ngFor="let val of cart">
-    <img src="./assets/{{val.img}}" alt="product" width="150px">
+    <img src="{{val.img}}" alt="product" width="150px">
     <p>{{val.name}}</p>
-    <p>{{val.price}}</p>
+    <p>{{val.price}}€</p>
 </div>
-<p>{{cartSummary()}}</p>
-<p>{{cartSummaryPlusTen()}}</p>
+<div class="summary">
+<p>{{cartSummary()}}€</p>
+<p>{{cartSummaryPlusTen()}}€</p>
+</div>
+<div>!-->
+<div class="cart-container mt-5 px-2">
+  <div class="left-side">
+    <h5 class="cartAmount bg-secondary " *ngIf="getCartAmount()"><b>Items: {{ getCartAmount() }}</b></h5>
+    <div *ngFor="let val of getCart()">
+      <div class="d-flex flex-row justify-content-between align-items-center m-1">
+        <img class="mb-1" src="{{val.img}}" alt="product" width="150px">
+
+        <p class="p-name"><b>{{ val.name }}</b></p>
+        <p>{{ val.price }}€</p>
+        <p>Amount: {{ val.quantity }}</p>
+        <div class="d-flex flex-row justify-content-center align-items-center">
+          <div class="btn btn-primary btn-sm bg-success"(click)="increase(val)">+</div>
+
+          <div class="btn btn-primary btn-sm bg-danger" (click)="decrease(val)">-</div>
+
+        </div>
+
+        <hr>
+      </div>
+    </div>
+  </div>
+  <div class="right-side mx-2 text-center">
+    <h5 class="summary-header bg-secondary">Summary</h5>
+    <p>Summary: {{ cartSummary() }}€</p>
+    <p>Service(10%): {{getServicePrice()}}€</p>
+    <p>Discount(15%): {{ getCartSummaryDiscountInEuro() }}€</p>
+    <p class="border-top border-dark"><b>Total Amount: {{ cartSummaryWihDiscountSubstracted() }}€</b></p>
+  </div>
+</div>

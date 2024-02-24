@@ -1,0 +1,39 @@
+.cart {
+  display:flex;
+  width: 70%;
+}
+.summary {
+  display: flex;
+  width: 30%;
+}
+
+.cart-container {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+  .p-name {
+    width: 40%;
+
+  }
+
+  .left-side {
+    width: 70%;
+    border: 2px solid black;
+
+
+    .cartAmount{
+      border-bottom: 2px solid black;
+
+    }
+
+  }
+  .right-side {
+    width: 30%;
+    border: 2px solid black;
+    height: 30%;
+  }
+  .summary-header{
+    border-bottom: 2px solid black;
+  }
+}
+

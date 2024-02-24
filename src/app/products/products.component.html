@@ -9,16 +9,21 @@
     </div>
 </div>
 -->
-<div class="container mt-5"></div>
-<div *ngFor="let product of products; index as i">
-  <div class="card" style="width: 18rem;">
-    <img src="{{product.img}}" class="card-img-top" alt="product-img">
-    <div class="card-body">
-      <h5 class="card-title">{{product.name}}</h5>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
-      <button *ngIf="product.availability" (click)="addToCart(product)">Add to cart</button>
+
+<div class="container mt-5">
+  <div class="row row-cols-1 row-cols-lg-3 row cols-xl-3 row-cols-md-3 row-cols-sm-2">
+    <div *ngFor="let product of products; index as i">
+      <div class="card"  [class.notAvailable]="!product.availability" style="width: 18rem;">
+        <img src="{{product.img}}" [class.notAvailableImg]="!product.availability" class="card-img-top img bg-secondary" alt="product-img">
+          <div class="card-body">
+            <h5 class="card-title">{{product.name}}</h5>
+            <div class="d-flex justify-content-between">
+            <a routerLink="/details/{{i}}" class="btn btn-secondary">Details</a>
+            <button *ngIf="product.availability" (click)="addToCart(product)" class="btn btn-success">Add to cart</button>
+            <p *ngIf="!product.availability">Not available</p>
+            </div>
+          </div>
+      </div>
     </div>
   </div>
-
 </div>

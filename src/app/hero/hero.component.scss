@@ -1,0 +1,17 @@
+.hero {
+  align-items: center;
+  align-content: center;
+  display: flex;
+  justify-content: center;
+  height: 40vh;
+  object-fit: cover;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position-y: 90%;
+  background-repeat: no-repeat;
+  background-image: url('/assets/gym-hero.jpg');
+}
+.hero-text{
+  color: dimgrey;
+  text-shadow: 4px 5px 4px rgba(0,0,0,0.71);
+}

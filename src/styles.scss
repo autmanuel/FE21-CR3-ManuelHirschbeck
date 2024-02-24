@@ -1,1 +1,11 @@
-/* You can add global styles to this file, and also import other style files */
+.anta-regular {
+  font-family: "Anta", sans-serif;
+  font-weight: 200;
+  font-style: normal;
+}
+@import url('https://fonts.googleapis.com/css2?family=Anta&display=swap');
+
+
+body {
+  background-color: rgb(244,242,239);
+}

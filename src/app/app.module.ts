@@ -7,7 +7,8 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { ProductsComponent } from './products/products.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { CartComponent } from './cart/cart.component';
-import {FooterComponent} from "./footer/footer.component";
+import { FooterComponent } from './footer/footer.component';
+import { HeroComponent } from './hero/hero.component';
 
 @NgModule({
   declarations: [
@@ -15,14 +16,10 @@ import {FooterComponent} from "./footer/footer.component";
     NavbarComponent,
     ProductsComponent,
     ProductDetailsComponent,
-    CartComponent
+    CartComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    FooterComponent
-  ],
+  imports: [BrowserModule, AppRoutingModule, FooterComponent],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
